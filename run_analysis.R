@@ -30,8 +30,8 @@ new_names<- gsub('-', '', new_names)
 
 names(x_data)<- new_names
 
-activities = read.table('./activity_labels.txt')
-activityLabels= activities[,2]
+activities <- read.table('./activity_labels.txt')
+activityLabels<- activities[,2]
 
 y_data[,1]<-activityLabels[y_data[,1]]
 
