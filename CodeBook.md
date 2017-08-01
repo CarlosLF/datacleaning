@@ -22,13 +22,13 @@ activity - Type of activity,
 
 ## Measurements 
 
-tBodyAccMeanX
-tBodyAccMeanY
-tBodyAccMeanZ
-tBodyAccStdX
-tBodyAccStdY
-tBodyAccStdZ
-tGravityAccMeanX
+tBodyAccMeanX  
+tBodyAccMeanY  
+tBodyAccMeanZ  
+tBodyAccStdX  
+tBodyAccStdY  
+tBodyAccStdZ  
+tGravityAccMeanX  
 tGravityAccMeanY
 tGravityAccMeanZ
 tGravityAccStdX
