@@ -24,8 +24,8 @@ x_data<- x_data0[,ind_mean_std]
 # Use descriptive activity names to name the activities in the data set
 names(x_data)<- features_names[ind_mean_std]
 
-activities = read.table('./activity_labels.txt')
-activityLabels= activities[,2]
+activities <- read.table('./activity_labels.txt')
+activityLabels<- activities[,2]
 
 y_data[,1]<-activityLabels[y_data[,1]]
 
