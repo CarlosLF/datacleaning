@@ -12,7 +12,7 @@ The tidy_data.txt file has the following variables
 subject - id of the subject
 activity - Type of activity, 
 
-##The type of activities are the following:
+## The type of activities are the following:
 1 WALKING
 2 WALKING_UPSTAIRS
 3 WALKING_DOWNSTAIRS
