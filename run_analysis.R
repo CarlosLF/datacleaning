@@ -1,5 +1,4 @@
 library(plyr)
-setwd("/Users/carlos/Documents/Coursera/Datascience/curso3/week4/UCI HAR Dataset")
 
 # Read train data
 x_train <- read.table("./train/X_train.txt")
@@ -24,7 +23,12 @@ ind_mean_std <- grep("(mean|std)\\(", features_names)
 x_data<- x_data0[,ind_mean_std]
 
 # Uses descriptive activity names to name the activities in the data set
-names(x_data)<- features_names[ind_mean_std]
+new_names<- features_names[ind_mean_std]
+new_names<- gsub('-mean\\(\\)', 'Mean', new_names)
+new_names<- gsub('-std\\(\\)', 'Std', new_names)
+new_names<- gsub('-', '', new_names)
+
+names(x_data)<- new_names
 
 activities = read.table('./activity_labels.txt')
 activityLabels= activities[,2]
@@ -35,10 +39,10 @@ names(y_data)<- "activity"
 names(subject_data)<- "subject"
 
 # tidy data set with the average of each variable for each activity and each subject
-all_data<- cbind(x_data,y_data,subject_data)
+data<- cbind(x_data,y_data,subject_data)
 
-avg_data <- ddply(all_data, .(subject, activity), function(x) colMeans(x[, 1:66]))
+tidy_data <- ddply(data, .(subject, activity), function(x) colMeans(x[, 1:66]))
 
 #save data
-write.table(avg_data, "average_data.txt", row.name=FALSE)
+write.table(tidy_data, "tidy_data.txt", row.name=FALSE)
 
